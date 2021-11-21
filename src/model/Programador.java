@@ -106,10 +106,19 @@ public class Programador {
 	public String toString() {
 		return "Nombre: "+nombre+"\n";
 	}
-	//este metodo no se puede usar en esta clase, por lo que lo coloque en la clase Maraton
-	//el problema es que siempre imprime la misma linea
-	public void inorden(Programador p) {
-		
+	//cambie este metodo a tipo String, ya que si lo ponia void como aparece en el enunciado no habia forma de imprimir la lista
+	public String inorden(Programador p) {
+		String list = "";
+		if( p != null) {
+			if(p.getIzq() != null) {
+				list += inorden(p.getIzq());
+			}
+			list += p.toString();
+			if(p.getDer() != null) {
+				list += inorden(p.getDer());
+			}
+		}
+		return list;
 	}
 	
 }

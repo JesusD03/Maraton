@@ -62,25 +62,11 @@ public class Maraton {
 	public String[] darListaProgramadores() {
 		String list[] = new String[2];
 		if(programadorRaiz != null) {
-			list [0] = inorden(programadorRaiz);
+			list [0] = programadorRaiz.inorden(programadorRaiz);
 			list [1] = String.valueOf(programadorRaiz.darAltura());
 		}else {
 			list [0] = "Actualmente no hay programadores registrados\n";
 			list [1] = "No se puede calcular la altura porque no hay programadores\n";
-		}
-		return list;
-	}
-	
-	public String inorden(Programador p) {
-		String list = "";
-		if( p != null) {
-			if(p.getIzq() != null) {
-				list += inorden(p.getIzq());
-			}
-			list += p.toString();
-			if(p.getDer() != null) {
-				list += inorden(p.getDer());
-			}
 		}
 		return list;
 	}
