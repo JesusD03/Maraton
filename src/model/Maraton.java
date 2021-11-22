@@ -66,7 +66,7 @@ public class Maraton {
 			list [1] = String.valueOf(programadorRaiz.darAltura());
 		}else {
 			list [0] = "Actualmente no hay programadores registrados\n";
-			list [1] = "No se puede calcular la altura porque no hay programadores\n";
+			list [1] = "0\n";
 		}
 		return list;
 	}
